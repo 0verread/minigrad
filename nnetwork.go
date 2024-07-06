@@ -39,11 +39,11 @@ func (n *Neuron) Call(x []*Value) *Value {
   return act
 }
 
-func (n *Neoron) Parameters() []*Value  {
+func (n *Neuron) Parameters() []*Value  {
   return append(n.w, n.b)
 }
 
-func (n *Neoron) String() string  {
+func (n *Neuron) String() string  {
   if n.nonlin {
     return fmt.Sprintf("ReLUNeuron(%d)", len(n.w))
   }
@@ -53,12 +53,12 @@ func (n *Neoron) String() string  {
 // Layer struct
 
 type Layer struct {
-  neuron []*Neoron
+  neuron []*Neuron
 }
 
 func NewLayer(nin, nout int, nonlin bool) *Layer  {
-  neorons := make([]*Neoron, nout)
-  for i:= range neorons {
+  neurons := make([]*Neuron, nout)
+  for i:= range neurons {
     neurons[i] = NewNeuron(nin, nonlin)
   }
   return &Layer{neurons: neurons}
