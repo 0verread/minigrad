@@ -1,5 +1,5 @@
 # minigrad
-Andrej Karpathy's (Micrograd)[https://github.com/karpathy/micrograd] implementation in Go
+Andrej Karpathy's [Micrograd](https://github.com/karpathy/micrograd) implementation in Go
 
 
 ## Usage
