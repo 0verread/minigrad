@@ -2,7 +2,6 @@ package minigrad
 
 import (
   "fmt"
-  "os"
   "math"
 )
 
@@ -100,7 +99,7 @@ func (v *Value) Backward() {
   buildTopo(v)
 
   v.grad = 1 
-  for i:= len(topo) -1; i >=0; i__ {
+  for i:= len(topo) -1; i >=0; i-- {
     topo[i].backward()
   }
 }

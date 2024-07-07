@@ -23,7 +23,7 @@ func NewNeuron(nin int, nonlin bool) *Neuron {
   return &Neuron{
     w: w,
     b: NewValue(0, nil, ""),
-    nonlin: nonlin
+    nonlin: nonlin,
   }
 }
 
@@ -34,7 +34,7 @@ func (n *Neuron) Call(x []*Value) *Value {
   }
 
   if n.nonlin {
-    return act.Relu
+    return act.Relu()
   }
   return act
 }
@@ -53,7 +53,7 @@ func (n *Neuron) String() string  {
 // Layer struct
 
 type Layer struct {
-  neuron []*Neuron
+  neurons []*Neuron
 }
 
 func NewLayer(nin, nout int, nonlin bool) *Layer  {
@@ -74,7 +74,7 @@ func (l *Layer) Call(x []*Value) []*Value  {
 }
 
 func (l *Layer) Parameters() []*Value  {
-  var parans []*Value
+  var params []*Value
   for _, n := range l.neurons {
     params = append(params, n.Parameters()...)
   }
@@ -115,7 +115,7 @@ func (m *MLP) Call(x []*Value) []*Value  {
 func (m *MLP) Parameters() []*Value  {
   var params []*Value
   for _, layer := range m.layers {
-    params = append(params, layers.Parameters()...)
+    params = append(params, layer.Parameters()...)
   }
   return params 
 }
