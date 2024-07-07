@@ -12,15 +12,16 @@ import (
 
 func main() {
   // inputs a, b
-  a := mg.NewValue(2.0)
-  b := mg.NewValue(0.1)
+	a := mg.NewValue(-4.0, nil, "")
+	b := mg.NewValue(2.0, nil, "")
+	c := a.Add(b)
+	d := a.Mul(b).Add(b.Pow(3))
+	c = c.Add(c.Add(mg.NewValue(1.0, nil, "")))
+	c = c.Add(mg.NewValue(1.0, nil, "").Add(c))
+	d = d.Add(d.Mul(2.0).Add(b.Add(a).Relu()))
+  
+  d.Backward()
 
-  x := mg.NewValue(-2.0)
-  y := mg.NewValue(1.0)
-
-  bi := mg.New(4.908765)
-
-  xa := mg.Mul(x, a)
-  yb := mg.Mul(y, b)
 }
 ```
+
