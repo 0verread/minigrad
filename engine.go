@@ -105,15 +105,15 @@ func (v *Value) Backward() {
 }
 
 func (v *Value) Neg() *Value {
-  return v.Mul(-1)
+  return v.Mul(-1.0)
 }
 
 func (v *Value) Sub(other interface{}) *Value {
-  return v.Add(NewValue(0, nil, "").Sub(other))
+  return v.Add(NewValue(0.0, nil, "").Sub(other))
 }
 
 func (v *Value) Div(other interface{}) *Value {
-  return v.Mul(NewValue(1, nil, "").Div(other))
+  return v.Mul(NewValue(1.0, nil, "").Div(other))
 }
 
 func (v *Value) String()  string {
@@ -128,7 +128,7 @@ func Add(other interface{}, v *Value) *Value  {
 
 
 func Sub(other interface{}, v *Value) *Value  {
-  return NewValue(0, nil, "").Sub(v).Add(other)
+  return NewValue(0.0, nil, "").Sub(v).Add(other)
 }
 
 func Mul(other interface{}, v *Value) *Value  {
@@ -136,7 +136,7 @@ func Mul(other interface{}, v *Value) *Value  {
 }
 
 func Div(other interface{}, v *Value) *Value  {
-  return NewValue(1, nil, "").Div(v).Mul(other)
+  return NewValue(1.0, nil, "").Div(v).Mul(other)
 }
 
 
