@@ -24,3 +24,11 @@ func main() {
 }
 ```
 
+## Contribution
+
+Feel free to raise a issue or PR to make enhancements or report a bug. I would 
+love to see more test cases.
+
+## License
+
+minigrad is under [MIT](https://github.com/0verread/LICENSE).
