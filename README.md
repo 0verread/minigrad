@@ -1,5 +1,5 @@
 # minigrad
-Andrej Karpathy's [Micrograd](https://github.com/karpathy/micrograd) implementation in Go
+A neural network library in golang on an autograd engine. Faster and easy to use like PyTorch. ( This is Andrej Karpathy's [Micrograd](https://github.com/karpathy/micrograd) implementation in Go)
 
 
 ## Usage
